@@ -1,24 +1,27 @@
+# projectb
 
-     ,-----.,--.                  ,--. ,---.   ,--.,------.  ,------.
-    '  .--./|  | ,---. ,--.,--. ,-|  || o   \  |  ||  .-.  \ |  .---'
-    |  |    |  || .-. ||  ||  |' .-. |`..'  |  |  ||  |  \  :|  `--, 
-    '  '--'\|  |' '-' ''  ''  '\ `-' | .'  /   |  ||  '--'  /|  `---.
-     `-----'`--' `---'  `----'  `---'  `--'    `--'`-------' `------'
-    ----------------------------------------------------------------- 
+Hey everyone. Please clone the project and make a change here, and then commit it and push to origin/master.
 
+branch strategy:
 
-Welcome to your Rails project on Cloud9 IDE!
+```
+master
+develop
+feature/featureA
+feature/featureB
+...
+```
 
-To get started, just do the following:
+etc. So if you're working on the login feature, you'll create a branch called `feature/login`.
 
-1. Run the project with the "Run Project" button in the menu bar on top of the IDE.
-2. Preview your new app by clicking on the URL that appears in the Run panel below (https://connecting-restaurants-andrewjgremmo.c9users.io/).
+Here are some useful references on git branching:
 
-Happy coding!
-The Cloud9 IDE team
+- https://www.atlassian.com/git/tutorials/using-branches/git-checkout
+- http://nvie.com/posts/a-successful-git-branching-model/
 
+---
 
-## Support & Documentation
+Make whatever changes below:
 
-Visit http://docs.c9.io for support, or to learn more about using Cloud9 IDE. 
-To watch some training videos, visit http://www.youtube.com/user/c9ide
+- Ismail test commit
+- Shelby test commit from Cloud9
