@@ -14,6 +14,10 @@ feature/featureB
 
 etc. So if you're working on the login feature, you'll create a branch called `feature/login`.
 
+## Notes on merging:
+
+(Shelby:) I realized I've been merging with fast-forwards but I think it's a good idea to use `git merge [thebranch] --no-ff` from now on so it's easier to make sense of the commit history.
+
 Here are some useful references on git branching:
 
 - https://www.atlassian.com/git/tutorials/using-branches/git-checkout
@@ -21,7 +25,7 @@ Here are some useful references on git branching:
 
 ---
 
-Make whatever changes below:
+##Make whatever changes below:
 
 - Ismail test commit
 - Shelby test commit from Cloud9
