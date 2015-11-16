@@ -16,7 +16,7 @@ etc. So if you're working on the login feature, you'll create a branch called `f
 
 ## Notes on merging:
 
-(Shelby:) I realized I've been merging with fast-forwards but I think it's a good idea to use `git merge [thebranch] --no-ff` from now on so it's easier to make sense of the commit history.
+(Shelby:) I realized I've been merging with fast-forwards but I think it's a good idea to use `git merge [thebranch] --no-ff` from now on so it's easier to make sense of the commit history. (And I'll try to start being consistent about making changes on branches other than master and merging to master later.)
 
 Here are some useful references on git branching:
 
