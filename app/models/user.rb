@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
     end
     
     def password=(password)
+        @password = password
         self.password_hash = BCrypt::Password.create(password)
     end
     
