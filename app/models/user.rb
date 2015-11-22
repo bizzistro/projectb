@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   validates :username, :password_hash, :session_token, presence: true
   validates :username, length: { minimum: 6 }
   validates :password, length: { minimum: 6, allow_nil: true }
+  has_many  :posts
 
   after_initialize :ensure_session_token
 
