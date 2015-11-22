@@ -12,7 +12,7 @@ development:
 
 test:
   <<: *default
-  database: connecting_restaurants_test
+  database: connecting_restaurants_testf
 
 production:
   <<: *default
