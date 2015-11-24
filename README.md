@@ -24,10 +24,3 @@ Here are some useful references on git branching:
 
 - https://www.atlassian.com/git/tutorials/using-branches/git-checkout
 - http://nvie.com/posts/a-successful-git-branching-model/
-
----
-
-##Make whatever changes below:
-
-- Ismail test commit
-- Shelby test commit from Cloud9
