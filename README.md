@@ -1,5 +1,7 @@
 # projectb
 
+See the wiki page for more information on development. > > >
+
 Hey everyone. Please clone the project and make a change here, and then commit it and push to origin/master.
 
 branch strategy:
