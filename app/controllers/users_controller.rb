@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     if @user.save
       sign_in(@user)
       #below link can be changed to our newsfeed index once we have
-      redirect_to new_user_url
+      redirect_to posts_url
     else
       #this passes any validation errors associated with creating a user
       flash.now[:errors] = @user.errors.full_messages

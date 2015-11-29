@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
     if user
       sign_in(user)
       #below link can be changed to our newsfeed index once we have
-      redirect_to new_user_url
+      redirect_to posts_url
     else
       flash.now[:errors] = ["Invalid username or password"]
       render :new
