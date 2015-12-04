@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_filter :require_signed_in!
   
-  helper_method :current_user
+  helper_method :current_user, :sort_column, :sort_direction
 
   # GET /posts
   # GET /posts.json
@@ -73,6 +73,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :content, :user_id)
+      params.require(:post).permit(:title, :content, :state, :user_id)
     end
 end
