@@ -2,12 +2,17 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_filter :require_signed_in!
   
-  helper_method :current_user, :sort_column, :sort_direction
+  helper_method :current_user
 
   # GET /posts
   # GET /posts.json
   def index
     @posts = Post.all
+    if params[:search]
+      @posts = Post.search(params[:search]).order("created_at DESC")
+    else
+      @posts = Post.all.order('created_at DESC')
+    end
   end
 
   # GET /posts/1
