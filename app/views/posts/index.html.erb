@@ -13,6 +13,7 @@
       <th>Title</th><!-- click on post.title or post.content or div to link to /show/ view -->
       <th>Content</th>
       <th>State</th>
+      <th>ZipCode</th>
       <th>User</th><!-- clicking on user redirects to user.profile -->
     </tr>
   </thead>
@@ -23,6 +24,7 @@
         <td><%= post.title %></td>
         <td><%= post.content %></td>
         <td><%= post.state %></td>
+        <td><%= post.zipcode %></td>
         <td><%= post.user.username %></td>
         <td><%= link_to 'Show', post %></td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
