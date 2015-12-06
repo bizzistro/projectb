@@ -16,7 +16,7 @@ class MessagesController < ApplicationController
   end
   
   def create
-    recipient = Post.find(params[:id]).user
+    recipient = Post.find(params[:post_id]).user
     @message = Message.new(message_params)
     @message.creator = current_user
     @message.recipient = recipient
