@@ -1,5 +1,5 @@
 class MessagesController < ApplicationController
-  before_action :set_message, only: [:show, :update, :destroy]
+  before_action :set_message, only: [:show, :destroy]
   before_filter :require_signed_in!
 
   helper_method :current_user
@@ -29,16 +29,14 @@ class MessagesController < ApplicationController
     end
   end
   
-  def update
-    if @message.update(post_params)
-      redirect_to @post
-    end
-  end
-  
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_message
     @message = Message.find(params[:id])
+    if @message
+      @message.read = true
+      @message.save
+    end
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
