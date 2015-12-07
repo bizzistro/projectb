@@ -6,7 +6,7 @@
   <%= link_to(post) do %>
   <h3><%= post.title %> <small>@<%= post.user.username %> <%= post.created_at.to_s(:short) %></small></h3>
   <% end %>
-  <%= image_tag(post.image_url) %>
+  <%= image_tag post.image_url, class:"img-responsive img-half-width" %>
   <p><%= post.content %></p>
   <p><%= post.state %> <%= post.zipcode %></p>
   <small><%= link_to 'Edit', edit_post_path(post) %></small> | 
