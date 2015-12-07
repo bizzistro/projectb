@@ -2,6 +2,11 @@
 
 <h1>All Posts</h1>
 
+<%= form_tag(posts_path, :method => "get", id: "search-form") do %>
+<%= text_field_tag :search, params[:search], placeholder: "Search State" %>
+<%= submit_tag "Search" %>
+<% end %>
+
 <% @posts.each do |post| %>
   <%= link_to(post) do %>
   <h3><%= post.title %> <small>@<%= post.user.username %> <%= post.created_at.to_s(:short) %></small></h3>
