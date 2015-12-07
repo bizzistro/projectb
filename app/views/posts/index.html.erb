@@ -1,37 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Posts</h1>
+<h1>All Posts</h1>
 
-<%= form_tag(posts_path, :method => "get", id: "search-form") do %>
-<%= text_field_tag :search, params[:search], placeholder: "Search State" %>
-<%= submit_tag "Search" %>
+<% @posts.each do |post| %>
+  <%= link_to(post) do %>
+  <h3><%= post.title %> <small>@<%= post.user.username %> <%= post.created_at.to_s(:short) %></small></h3>
+  <% end %>
+  <%= image_tag post.image_url, class:"img-responsive img-half-width" %>
+  <p><%= post.content %></p>
+  <p><%= post.state %> <%= post.zipcode %></p>
+  <small><%= link_to 'Edit', edit_post_path(post) %></small> | 
+  <small><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %></small>
 <% end %>
-
-<table class="table table-bordered table-striped"><!-- newsfeed posts should not be displayed as a table -->
-  <thead>
-    <tr>
-      <th>Title</th><!-- click on post.title or post.content or div to link to /show/ view -->
-      <th>Content</th>
-      <th>State</th>
-      <th>ZipCode</th>
-      <th>User</th><!-- clicking on user redirects to user.profile -->
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.title %></td>
-        <td><%= post.content %></td>
-        <td><%= post.state %></td>
-        <td><%= post.zipcode %></td>
-        <td><%= post.user.username %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<%= link_to 'New Post', new_post_path %>

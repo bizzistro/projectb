@@ -20,12 +20,12 @@
     <nav class="navbar navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a class="navbar-brand" href="<%= posts_url %>">Connecting Restaurants to Charities</a>
+          <%= link_to 'Connecting Restaurants to Charities', posts_path, class: "navbar-brand" %>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <% if signed_in? %>
-              <li>
+            <li>
                 <a><%= current_user.username %></a><!-- <a> element is temporary, should link_to current_user.profile -->
               </li>
               <li>
@@ -34,6 +34,9 @@
                 <% else %>
                   <%= link_to "No New Messages", messages_url %>                
                 <% end %>
+              </li>
+              <li>
+                <%= link_to 'New Post', new_post_path %>
               </li>
               <li>
                 <%= link_to "Sign Out", session_url, :method=> :delete %>

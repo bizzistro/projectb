@@ -13,3 +13,7 @@
  *= require_tree .
  *= require_self
  */
+ 
+.img-half-width {
+     max-width: 50%;
+}
