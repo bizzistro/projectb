@@ -1,9 +1,5 @@
 <p id="notice"><%= notice %></p>
 
 <h3><%= @post.title %> <small><%= @post.created_at.to_s(:short) %></small></h3>
-<small></small>
+<small><%= @post.zipcode %> <%= @post.state %></small>
 <p><%= @post.content %></p>
-
-<p>&mdash; <%= @post.user.username %></p>
-<small><%= link_to 'Edit', edit_post_path(@post) %></small> | 
-<small><%= link_to 'Back', posts_path %></small>
