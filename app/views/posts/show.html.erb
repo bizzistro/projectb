@@ -1,5 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <h3><%= @post.title %> <small><%= @post.created_at.to_s(:short) %></small></h3>
-<small><%= @post.zipcode %> <%= @post.state %></small>
+<%= image_tag(@post.image_url) %>
 <p><%= @post.content %></p>
+<small><%= @post.zipcode %> <%= @post.state %></small>
+<small><%= link_to 'Edit', edit_post_path(@post) %></small> | 
+<small><%= link_to 'Delete', @post, method: :delete, data: { confirm: 'Are you sure?' } %></small>ç

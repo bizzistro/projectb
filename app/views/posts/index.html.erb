@@ -6,8 +6,9 @@
   <%= link_to(post) do %>
   <h3><%= post.title %> <small><%= post.created_at.to_s(:short) %></small></h3>
   <% end %>
-  <p><%= post.state %> <%= post.zipcode %></p>
+  <%= image_tag(post.image_url) %>
   <p><%= post.content %></p>
+  <p><%= post.state %> <%= post.zipcode %></p>
   <p><small>&mdash; <%= post.user.username %> </small></p>
   <small><%= link_to 'Edit', edit_post_path(post) %></small> | 
   <small><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %></small>
