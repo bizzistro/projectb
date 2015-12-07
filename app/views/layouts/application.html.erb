@@ -20,13 +20,20 @@
     <nav class="navbar navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a class="navbar-brand" href="#">Connecting Restaurants to Charities</a>
+          <a class="navbar-brand" href="<%= posts_url %>">Connecting Restaurants to Charities</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <% if signed_in? %>
               <li>
                 <a><%= current_user.username %></a><!-- <a> element is temporary, should link_to current_user.profile -->
+              </li>
+              <li>
+                <% if current_user.unread_message_count > 0 %>
+                  <%= link_to "#{current_user.unread_message_count} New Messages", messages_url %>
+                <% else %>
+                  <%= link_to "No New Messages", messages_url %>                
+                <% end %>
               </li>
               <li>
                 <%= link_to "Sign Out", session_url, :method=> :delete %>

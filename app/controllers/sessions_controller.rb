@@ -1,5 +1,9 @@
 class SessionsController < ApplicationController
+  helper_method :current_user
   def new
+    if current_user
+      redirect_to posts_url
+    end
   end
 
   def create

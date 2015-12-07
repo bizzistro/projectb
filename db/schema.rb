@@ -16,6 +16,16 @@ ActiveRecord::Schema.define(version: 20151206200041) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "messages", force: :cascade do |t|
+    t.string   "title",        null: false
+    t.text     "message"
+    t.boolean  "read",         null: false
+    t.integer  "creator_id",   null: false
+    t.integer  "recipient_id", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "posts", force: :cascade do |t|
     t.text     "title"
     t.text     "content"
