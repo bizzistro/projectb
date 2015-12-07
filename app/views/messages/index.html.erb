@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Messages</h1>
+
+<% if current_user.unread_message_count > 0 %>
+<% @messages.each do |message| %>
+<h3><%= link_to message.title, message %> <small>from <%= message.creator.username %></small></h3>
+<%= link_to 'Delete', message, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
+<% else %>
+<h3>No new messages</h3>
+<% end %>
+
+
+
+<%= link_to 'Posts', posts_url %>

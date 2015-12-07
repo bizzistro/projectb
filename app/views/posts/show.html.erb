@@ -4,5 +4,10 @@
 <%= image_tag(@post.image_url) %>
 <p><%= @post.content %></p>
 <small><%= @post.zipcode %> <%= @post.state %></small>
+<% if @post.user != current_user %>
+  <%= link_to 'Send Message', new_post_message_path(@post) %>
+<% end %>
+<% if @post.user == current_user %>
 <small><%= link_to 'Edit', edit_post_path(@post) %></small> | 
-<small><%= link_to 'Delete', @post, method: :delete, data: { confirm: 'Are you sure?' } %></small>ç
+<small><%= link_to 'Delete', @post, method: :delete, data: { confirm: 'Are you sure?' } %></small>
+<% end %>

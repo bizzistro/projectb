@@ -24,18 +24,39 @@ RSpec.describe PostsController, type: :controller do
   # Post. As you add validations to Post, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    user = User.create!(username: "Test12345", password: "12345678")
+    {
+      title: "Test",
+      content: "Test",
+      user: user
+    }
+  }
+  
+  let(:new_attributes) {
+    user = User.create!(username: "Test12345", password: "12345678")
+    {
+      title: "Update Test",
+      content: "Update Test",
+    }
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    { 
+      title: nil,
+      content: nil,
+      user: nil
+    }
   }
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
   # PostsController. Be sure to keep this updated too.
-  let(:valid_session) { {} }
-
+  let(:valid_session) {
+    user = User.create!(username: "Test123456", password: "12345678")
+    controller.sign_in(user)
+    {}
+  }
+  
   describe "GET #index" do
     it "assigns all posts as @posts" do
       post = Post.create! valid_attributes
